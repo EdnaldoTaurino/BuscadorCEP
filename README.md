@@ -1,1 +1,2 @@
-# BuscadorCep
+npm install
+npx expo start
