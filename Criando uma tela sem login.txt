@@ -1,0 +1,62 @@
+https://reactnavigation.org/docs/getting-started  // documentação para duvidas
+primeiro passo vamos instalar:
+    npm install @react-navigation/native
+    npx expo install react-native-screens react-native-safe-area-context
+    npm install @react-navigation/native-stack
+previamente tendo o expo instalado na maquina e com o projeto ja iniciado e a tela inicial.
+
+apagar todo conteudo de app.js e adicionar este:
+
+//---------------------------------------------------------------------------------
+
+// In App.js in a new project
+
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
+
+//---------------------------------------------------------------------------------
+
+onde function HomeScreen vai ser a tela principal podendo alterar e deixar mais vazio, 
+só criar uma nova tela chamada HomeScreen.js h maiusculo 
+
+import React from "react";  //talvez seja desnecessario nas novas atts esse import
+import { View } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
+
+
+const navigation = useNavigation();
+
+export  function nomedafunção () {  // o navigation também pode ser passado dentro do export function nomedafunção (navigation) assim retira as importações do navigation
+                                    //import { useNavigation } from "@react-navigation/native"; 
+                                    // e retira tbm o const navigation = useNavigation();
+ return (
+   <View>
+   </View>
+  );
+}
+
+
